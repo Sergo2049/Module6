@@ -10,6 +10,8 @@ class LibraryBook(models.Model):
     taken_date = fields.Date('In use from', readonly=True)
     user_id = fields.Many2one(string='Responsible', comodel_name='res.users')
     active = fields.Boolean(default=True)
+    category_id = fields.Many2one(comodel_name='library.book.category',
+                                  string="Category")
 
     @api.onchange('reader_id')
     def _onchange_reader_id(self):

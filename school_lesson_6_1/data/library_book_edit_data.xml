@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+    <record id="school_lesson_6_1.library_book_2" model="library.book">
+        <field name="name">Останній з могікан</field>
+    </record>
+    <delete id="school_lesson_6_1.library_book_3" model="library.book"/>
+</odoo>

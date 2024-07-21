@@ -10,6 +10,7 @@
                 <field name="reader_id"/>
                 <field name="taken_date" optional="show"/>
                 <field name="user_id" optional="hide"/>
+                <field name="category_id"/>
             </tree>
         </field>
     </record>
@@ -26,6 +27,7 @@
                         <h1><field name="name" placeholder="Name"/></h1>
                     </div>
                     <group>
+                        <field name="category_id"/>
                         <field name="reader_id"/>
                         <field name="taken_date"/>
                         <separator colspan="2"/>

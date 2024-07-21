@@ -21,6 +21,9 @@
         'data/res_partner_data.xml',
         'views/library_book_menus.xml',
         'views/library_book_views.xml',
+        'data/library_book_data.xml',
+        'data/library_book_demo.xml',
+        'data/library_book_edit_data.xml',
     ],
     'demo': [
         'data/res_partner_demo.xml',
