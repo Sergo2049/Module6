@@ -1,4 +1,5 @@
 from odoo import fields, models
+from datetime import datetime, timedelta
 
 
 class LibraryAuthor(models.Model):
@@ -8,6 +9,7 @@ class LibraryAuthor(models.Model):
     first_name = fields.Char(required=True)
     last_name = fields.Char(required=True)
     birth_date = fields.Date('Birthday')
+    trainee_access = fields.Boolean(compute='_compute_trainee_access')
 
     def name_get(self):
         return [(rec.id, "%s %s" % (
@@ -20,3 +22,12 @@ class LibraryAuthor(models.Model):
 
     def _create_by_user(self, vals):
         return self.sudo().create(vals)
+
+    def _compute_trainee_access(self):
+        for rec in self:
+            rec.trainee_access = datetime.today() - timedelta(days=30) < rec.create_date
+            print(datetime.today())
+            print(datetime.today() - timedelta(days=30))
+            print(rec.create_date)
+            print(datetime.today() - timedelta(days=30) > rec.create_date)
+
