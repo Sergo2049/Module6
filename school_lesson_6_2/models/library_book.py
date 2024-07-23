@@ -7,7 +7,7 @@ class LibraryBook(models.Model):
 
     author_id = fields.Many2one(
         comodel_name='library.author',
-        string='Author',
+        string='Author'
     )
 
     def action_take_in(self):
