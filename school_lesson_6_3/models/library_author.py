@@ -7,6 +7,7 @@ class LibraryAuthor(models.Model):
     biography = fields.Text(translate=True)
 
     def action_book_list(self):
+        """Dsplay a list of books by a given author in the pop-up window"""
         self.ensure_one()
         return {
             'name': _('Author Books'),

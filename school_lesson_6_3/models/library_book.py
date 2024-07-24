@@ -10,6 +10,7 @@ class LibraryBook(models.Model):
     description = fields.Text(translate=True)
 
     def write(self, vals):
+        """Prohibits publishing books with a future date"""
         if vals.get('taken_date') and vals.get('taken_date') > fields.Date.today():
             raise UserError(ERR_MSG)
         return super(LibraryBook, self).write(vals)
